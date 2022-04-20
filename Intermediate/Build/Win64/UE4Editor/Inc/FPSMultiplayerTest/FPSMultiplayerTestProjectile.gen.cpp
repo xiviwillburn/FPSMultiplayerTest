@@ -163,7 +163,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestProjectile() {}
 		{ "ToolTip", "Sphere collision component" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp = { "CollisionComp", nullptr, (EPropertyFlags)0x00400000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFPSMultiplayerTestProjectile, CollisionComp), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp = { "CollisionComp", nullptr, (EPropertyFlags)0x00400000000b0029, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFPSMultiplayerTestProjectile, CollisionComp), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -174,7 +174,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestProjectile() {}
 		{ "ToolTip", "Projectile movement component" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement = { "ProjectileMovement", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFPSMultiplayerTestProjectile, ProjectileMovement), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement = { "ProjectileMovement", nullptr, (EPropertyFlags)0x00400000000a003d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFPSMultiplayerTestProjectile, ProjectileMovement), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_CollisionComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFPSMultiplayerTestProjectile_Statics::NewProp_ProjectileMovement,
@@ -206,12 +206,24 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFPSMultiplayerTestProjectile, 444447395);
+	IMPLEMENT_CLASS(AFPSMultiplayerTestProjectile, 352976343);
 	template<> FPSMULTIPLAYERTEST_API UClass* StaticClass<AFPSMultiplayerTestProjectile>()
 	{
 		return AFPSMultiplayerTestProjectile::StaticClass();
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSMultiplayerTestProjectile(Z_Construct_UClass_AFPSMultiplayerTestProjectile, &AFPSMultiplayerTestProjectile::StaticClass, TEXT("/Script/FPSMultiplayerTest"), TEXT("AFPSMultiplayerTestProjectile"), false, nullptr, nullptr, nullptr);
+
+	void AFPSMultiplayerTestProjectile::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
+	{
+		static const FName Name_CollisionComp(TEXT("CollisionComp"));
+		static const FName Name_ProjectileMovement(TEXT("ProjectileMovement"));
+
+		const bool bIsValid = true
+			&& Name_CollisionComp == ClassReps[(int32)ENetFields_Private::CollisionComp].Property->GetFName()
+			&& Name_ProjectileMovement == ClassReps[(int32)ENetFields_Private::ProjectileMovement].Property->GetFName();
+
+		checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in AFPSMultiplayerTestProjectile"));
+	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSMultiplayerTestProjectile);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER

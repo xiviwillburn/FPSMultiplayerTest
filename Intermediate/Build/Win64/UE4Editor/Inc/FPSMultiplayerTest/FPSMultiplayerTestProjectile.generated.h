@@ -36,7 +36,15 @@ public: \
 	DECLARE_CLASS(AFPSMultiplayerTestProjectile, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/FPSMultiplayerTest"), NO_API) \
 	DECLARE_SERIALIZER(AFPSMultiplayerTestProjectile) \
 	static const TCHAR* StaticConfigName() {return TEXT("Game");} \
-
+ \
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override; \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		CollisionComp=NETFIELD_REP_START, \
+		ProjectileMovement, \
+		NETFIELD_REP_END=ProjectileMovement	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FPSMultiplayerTest_Source_FPSMultiplayerTest_FPSMultiplayerTestProjectile_h_15_INCLASS \
@@ -47,7 +55,15 @@ public: \
 	DECLARE_CLASS(AFPSMultiplayerTestProjectile, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/FPSMultiplayerTest"), NO_API) \
 	DECLARE_SERIALIZER(AFPSMultiplayerTestProjectile) \
 	static const TCHAR* StaticConfigName() {return TEXT("Game");} \
-
+ \
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override; \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		CollisionComp=NETFIELD_REP_START, \
+		ProjectileMovement, \
+		NETFIELD_REP_END=ProjectileMovement	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FPSMultiplayerTest_Source_FPSMultiplayerTest_FPSMultiplayerTestProjectile_h_15_STANDARD_CONSTRUCTORS \

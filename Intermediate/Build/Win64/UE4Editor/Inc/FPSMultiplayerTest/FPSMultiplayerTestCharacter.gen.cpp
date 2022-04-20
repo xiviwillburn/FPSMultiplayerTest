@@ -27,8 +27,54 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AFPSMultiplayerTestCharacter::execServer_OnFire)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		if (!P_THIS->Server_OnFire_Validate())
+		{
+			RPC_ValidateFailed(TEXT("Server_OnFire_Validate"));
+			return;
+		}
+		P_THIS->Server_OnFire_Implementation();
+		P_NATIVE_END;
+	}
+	static FName NAME_AFPSMultiplayerTestCharacter_Server_OnFire = FName(TEXT("Server_OnFire"));
+	void AFPSMultiplayerTestCharacter::Server_OnFire()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AFPSMultiplayerTestCharacter_Server_OnFire),NULL);
+	}
 	void AFPSMultiplayerTestCharacter::StaticRegisterNativesAFPSMultiplayerTestCharacter()
 	{
+		UClass* Class = AFPSMultiplayerTestCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "Server_OnFire", &AFPSMultiplayerTestCharacter::execServer_OnFire },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/** Fires a projectile. */" },
+		{ "ModuleRelativePath", "FPSMultiplayerTestCharacter.h" },
+		{ "ToolTip", "Fires a projectile." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFPSMultiplayerTestCharacter, nullptr, "Server_OnFire", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x80280CC0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AFPSMultiplayerTestCharacter_NoRegister()
 	{
@@ -37,6 +83,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestCharacter() {}
 	struct Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -108,6 +155,9 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestCharacter() {}
 	UObject* (*const Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_FPSMultiplayerTest,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AFPSMultiplayerTestCharacter_Server_OnFire, "Server_OnFire" }, // 1608165561
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics::Class_MetaDataParams[] = {
@@ -291,11 +341,11 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestCharacter() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AFPSMultiplayerTestCharacter_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -310,7 +360,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSMultiplayerTestCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFPSMultiplayerTestCharacter, 613177798);
+	IMPLEMENT_CLASS(AFPSMultiplayerTestCharacter, 2101528256);
 	template<> FPSMULTIPLAYERTEST_API UClass* StaticClass<AFPSMultiplayerTestCharacter>()
 	{
 		return AFPSMultiplayerTestCharacter::StaticClass();

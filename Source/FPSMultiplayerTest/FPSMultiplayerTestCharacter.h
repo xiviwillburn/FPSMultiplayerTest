@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Net/UnrealNetwork.h"
 #include "FPSMultiplayerTestCharacter.generated.h"
 
 class UInputComponent;
@@ -89,6 +90,12 @@ public:
 protected:
 	
 	/** Fires a projectile. */
+	UFUNCTION(Server, Reliable, WithValidation)
+	void Server_OnFire();
+
+	bool Server_OnFire_Validate();
+	void Server_OnFire_Implementation();
+
 	void OnFire();
 
 	/** Resets HMD orientation and position in VR. */

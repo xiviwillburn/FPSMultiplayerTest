@@ -3,6 +3,7 @@
 #include "FPSMultiplayerTestProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
+#include "Net/UnrealNetwork.h"
 
 AFPSMultiplayerTestProjectile::AFPSMultiplayerTestProjectile() 
 {
@@ -19,6 +20,8 @@ AFPSMultiplayerTestProjectile::AFPSMultiplayerTestProjectile()
 	// Set as root component
 	RootComponent = CollisionComp;
 
+	
+
 	// Use a ProjectileMovementComponent to govern this projectile's movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
 	ProjectileMovement->UpdatedComponent = CollisionComp;
@@ -29,6 +32,13 @@ AFPSMultiplayerTestProjectile::AFPSMultiplayerTestProjectile()
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
+
+	//network reoplication
+	bReplicates = true;
+	CollisionComp->SetNetAddressable();
+	ProjectileMovement->SetNetAddressable();
+	CollisionComp->SetIsReplicated(true);
+	ProjectileMovement->SetIsReplicated(true);
 }
 
 void AFPSMultiplayerTestProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -40,4 +50,10 @@ void AFPSMultiplayerTestProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* 
 
 		Destroy();
 	}
+}
+
+void AFPSMultiplayerTestProjectile::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AFPSMultiplayerTestProjectile, CollisionComp);
+	DOREPLIFETIME(AFPSMultiplayerTestProjectile, ProjectileMovement);
 }

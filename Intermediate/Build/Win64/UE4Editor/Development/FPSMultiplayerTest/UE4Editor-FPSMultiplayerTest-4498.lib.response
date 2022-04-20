@@ -1,0 +1,22 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-FPSMultiplayerTest-4498.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\FPSMultiplayerTestEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTest.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestCharacter.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestGameMode.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestHUD.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestProjectile.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTest.init.gen.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestCharacter.gen.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestGameMode.gen.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestHUD.gen.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\FPSMultiplayerTestProjectile.gen.cpp.obj"
+"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\Default.rc2.res"
+/OUT:"C:\Users\xiviwillburn\Documents\Unreal Projects\FPSMultiplayerTest\Intermediate\Build\Win64\UE4Editor\Development\FPSMultiplayerTest\UE4Editor-FPSMultiplayerTest-4498.lib"
+/INCLUDE:IMPLEMENT_MODULE_FPSMultiplayerTest
