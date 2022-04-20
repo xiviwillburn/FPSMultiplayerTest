@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\xiviwillburn\\Documents\\Unreal Projects\\FPSMultiplayerTest\\Source\\FPSMultiplayerTest\\FPSMultiplayerTest.Build.cs",
+		"C:\\Users\\xiviwillburn\\Documents\\Unreal Projects\\FPSMultiplayerTest\\Source\\FPSMultiplayerTest.Target.cs",
+		"C:\\Users\\xiviwillburn\\Documents\\Unreal Projects\\FPSMultiplayerTest\\Source\\FPSMultiplayerTestEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}

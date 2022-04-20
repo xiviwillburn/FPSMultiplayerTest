@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "FPSMultiplayerTest",
+			"Path": "C:\\Users\\xiviwillburn\\Documents\\Unreal Projects\\FPSMultiplayerTest\\Source\\FPSMultiplayerTest.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "FPSMultiplayerTestEditor",
+			"Path": "C:\\Users\\xiviwillburn\\Documents\\Unreal Projects\\FPSMultiplayerTest\\Source\\FPSMultiplayerTestEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
